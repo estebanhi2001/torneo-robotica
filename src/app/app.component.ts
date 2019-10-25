@@ -1,5 +1,6 @@
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import { UniversalvariablesService } from './universalvariables.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,10 @@ export class AppComponent implements OnDestroy {
 
 
   private _mobileQueryListener: () => void;
-  public titulo: any;
  
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private uv: UniversalvariablesService) {
+    this.uv.titulo = "Torneo Robótica - Inicio";
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

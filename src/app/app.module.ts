@@ -12,6 +12,7 @@ import { PuntajesFinalesComponent } from './puntajesfinales/puntajesfinales.comp
 import { EnvivoComponent } from './envivo/envivo.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { AdminComponent } from './admin/admin.component';
+import { UniversalvariablesService} from './universalvariables.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AdminComponent } from './admin/admin.component';
     PuntajesFinalesComponent,
     EnvivoComponent,
     BienvenidaComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,7 @@ import { AdminComponent } from './admin/admin.component';
     DemoMaterialModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [UniversalvariablesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

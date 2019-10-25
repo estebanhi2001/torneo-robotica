@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UniversalvariablesService {
-
+  titulo: String = "Torneo Robótica"
   constructor() { }
 }

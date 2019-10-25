@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UniversalvariablesService } from '../universalvariables.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(public uv : UniversalvariablesService) { 
+    this.uv.titulo = "Torneo Robótica - Inicio de seción"
+   }
 
   ngOnInit() {
   }

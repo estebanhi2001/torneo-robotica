@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UniversalvariablesService } from '../universalvariables.service';
 
 @Component({
   selector: 'app-envivo',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnvivoComponent implements OnInit {
 
-  constructor() { }
+  constructor(public uv : UniversalvariablesService) { 
+    this.uv.titulo = "Torneo Robótica - En Vivo"
+   }
 
   ngOnInit() {
   }
