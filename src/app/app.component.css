@@ -35,3 +35,6 @@
     width: 80vw !important;
     max-width: 300px !important;
 } 
+.containercontent{
+  padding: 20px;
+}

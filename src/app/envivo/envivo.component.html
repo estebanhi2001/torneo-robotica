@@ -1,4 +1,21 @@
 <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>1</mat-grid-tile>
-        <mat-grid-tile>2</mat-grid-tile>
-      </mat-grid-list>
+  <mat-grid-tile [colspan]="2">
+    <mat-card style="text-align: center;">Equipos en competencia</mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card style="text-align: center;">
+        <mat-list role="list">
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+          </mat-list>
+    </mat-card>
+    
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card style="text-align: center;">Equipos en competencia</mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2">
+    <mat-card style="text-align: center;">Tabla de posición </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
