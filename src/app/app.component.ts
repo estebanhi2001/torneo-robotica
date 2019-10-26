@@ -14,8 +14,8 @@ export class AppComponent implements OnDestroy {
   private _mobileQueryListener: () => void;
  
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private uv: UniversalvariablesService) {
-    this.uv.titulo = "Torneo Robótica - Inicio";
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public uv : UniversalvariablesService) {
+    this.uv.titulo = "Torneo Robótica";
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);

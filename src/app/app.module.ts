@@ -13,6 +13,8 @@ import { EnvivoComponent } from './envivo/envivo.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { AdminComponent } from './admin/admin.component';
 import { UniversalvariablesService} from './universalvariables.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { UniversalvariablesService} from './universalvariables.service';
     BrowserModule,
     AppRoutingModule,
     DemoMaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [UniversalvariablesService],
   bootstrap: [AppComponent]
