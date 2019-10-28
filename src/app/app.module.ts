@@ -15,6 +15,8 @@ import { AdminComponent } from './admin/admin.component';
 import { UniversalvariablesService} from './universalvariables.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     DemoMaterialModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [UniversalvariablesService],

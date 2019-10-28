@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UniversalvariablesService } from '../universalvariables.service';
 
+
 @Component({
   selector: 'app-bienvenida',
   templateUrl: './bienvenida.component.html',
