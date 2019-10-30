@@ -42,7 +42,7 @@ export class RondasComponent implements OnInit {
     this.subscriptions.unsubscribe();
   }
 
-  displayedColumns = ['eq', 'h', 'b', 'r', 'f'];
+  displayedColumns = ['eq', 'h', 'b', 'r', 'f', 'v'];
   dataSource: MatTableDataSource<Comp>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

@@ -17,6 +17,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PrintComponent } from './print/print.component';
 import { RondasComponent } from './rondas/rondas.component';
+import { EquipoComponent } from './equipo/equipo.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RondasComponent } from './rondas/rondas.component';
     AdminComponent,
     PrintComponent,
     RondasComponent,
+    EquipoComponent,
   ],
   imports: [
     BrowserModule,

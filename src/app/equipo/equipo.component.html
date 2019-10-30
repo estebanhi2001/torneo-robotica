@@ -1,0 +1,69 @@
+<mat-card>
+    <mat-list>
+        <mat-list-item>
+            <h4 mat-line>{{eq.eq}}</h4>
+            <h4 mat-line>{{eq.es}}</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Ronda 1</h3>
+        <mat-list-item>
+            <h4 mat-line>Mejor Hito: {{eq.r[0].h}} ({{eq.r[0].p.h}} Puntos)</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Bonus: {{eq.r[0].b}} ({{eq.r[0].p.b}} Puntos)</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Reinicios: {{eq.r[0].r}} ({{eq.r[0].p.r}} Puntos)</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Puntaje de ronda: {{eq.r[0].p.t}} Puntos</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Desafios</h3>
+        <mat-list-item>
+            <h4 mat-line>Desafios: {{eq.ds}}</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Total desafios: {{eq.dt}}%</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Ronda 2</h3>
+        <mat-list-item>
+            <h4 mat-line>Mejor Hito: {{eq.r[1].h}} ({{eq.r[1].p.h}} Puntos)</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Bonus: {{eq.r[1].b}} ({{eq.r[1].p.b}} Puntos)</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Reinicios: {{eq.r[1].r}} ({{eq.r[1].p.r}} Puntos)</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Puntaje de ronda: {{eq.r[1].p.t}} Puntos</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Puntajes Finales</h3>
+        <mat-list-item>
+            <h4 mat-line>Mejor Ronda Hitos: {{eq.mrh}} Puntos</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>% Rendimiento: {{eq.ren}}%</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Puntaje desafios: {{eq.dt}}%</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Puntaje ponderado express: {{eq.ppe}}</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Ronda 1: {{eq.r[0].p.t}} Puntos</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Ronda 2: {{eq.r[1].p.t}} Puntos</h4>
+        </mat-list-item>
+        <mat-list-item>
+            <h4 mat-line>Puntaje Final: {{eq.t}} Puntos</h4>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+    </mat-list>
+
+</mat-card>

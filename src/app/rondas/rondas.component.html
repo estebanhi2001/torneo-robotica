@@ -12,31 +12,37 @@
         <!-- ID Column -->
         <ng-container matColumnDef="eq">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Equipo </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Equipo:"> {{row.eq}} ({{row.es}}) </mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Equipo: "> {{row.eq}} ({{row.es}}) </mat-cell>
         </ng-container>
 
         <!-- Progress Column -->
         <ng-container matColumnDef="h">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Mejor Hito: </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Hitos:">{{row.r[id-1].h}} ({{row.r[id-1].p.h}} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Mejor Hito: ">{{row.r[id-1].h}} ({{row.r[id-1].p.h}} Puntos)</mat-cell>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="b">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Bonus </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Bonus:">{{row.r[id-1].b}} ({{row.r[id-1].p.b}} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Bonus: ">{{row.r[id-1].b}} ({{row.r[id-1].p.b}} Puntos)</mat-cell>
         </ng-container>
 
         <!-- Color Column -->
         <ng-container matColumnDef="r">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Reinicios </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Reinicios:">{{row.r[id-1].r}} ({{row.r[id-1].p.r}} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Reinicios: ">{{row.r[id-1].r}} ({{row.r[id-1].p.r}} Puntos)</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="f">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Puntaje de la ronda </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Puntaje de la ronda:">{{row.r[id-1].p.t}} Puntos</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Puntaje de la ronda: ">{{row.r[id-1].p.t}} Puntos</mat-cell>
         </ng-container>
+
+        <ng-container matColumnDef="v">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row"><button mat-flat-button routerLink="/equipo/{{row.eq}}" color="primary">Ver más</button></mat-cell>
+        </ng-container>
+
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row [ngClass]="{'ausente': row.a == 0, 'listo': row.a >= 3 }" *matRowDef="let row; columns: displayedColumns;">

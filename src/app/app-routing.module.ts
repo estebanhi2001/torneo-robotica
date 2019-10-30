@@ -7,12 +7,16 @@ import { DesafiosComponent } from './desafios/desafios.component';
 import { AdminComponent } from './admin/admin.component';
 import { PrintComponent } from './print/print.component';
 import { RondasComponent } from './rondas/rondas.component';
+import { EquipoComponent } from './equipo/equipo.component';
 
 
 const routes: Routes = [
   {
     path: 'ronda/:id',
     component: RondasComponent
+  }, {
+    path: 'equipo/:id',
+    component: EquipoComponent
   }, {
     path: 'desafios',
     component: DesafiosComponent

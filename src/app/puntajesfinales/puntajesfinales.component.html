@@ -9,33 +9,33 @@
     <mat-table [dataSource]="dataSource" matSort>
 
         <!-- ID Column -->
-        <ng-container matColumnDef="equipo">
+        <ng-container matColumnDef="eq">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Equipo </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Equipo:"> {{row.equipo}} ({{row.e}}) </mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Equipo:"> {{row.eq}} ({{row.es}}) </mat-cell>
         </ng-container>
 
         <!-- Progress Column -->
         <ng-container matColumnDef="r1">
-            <mat-header-cell *matHeaderCellDef> Ronda 1: </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Ronda 1: </mat-header-cell>
             <mat-cell *matCellDef="let row" data-label="Hitos:">
-                {{row.r1}} Puntos
+                {{row.r[0].p.t}} Puntos
             </mat-cell>
         </ng-container>
 
         <!-- Color Column -->
-        <ng-container matColumnDef="de">
+        <ng-container matColumnDef="dt">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Desafíos: </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.df}}%</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.dt}}%</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="r2">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Ronda 2: </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.r2}} Puntos</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.r[1].p.t}} Puntos</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="pt">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Puntaje Final: </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.pf}} Puntos</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.t}} Puntos</mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
