@@ -7,12 +7,17 @@ import { UniversalvariablesService } from '../universalvariables.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+x: String;
   constructor(public uv : UniversalvariablesService) { 
     this.uv.titulo = "Torneo Robótica - Inicio de seción"
    }
 
   ngOnInit() {
+    this.uv.comp.subscribe(
+      data => data.subscribe(
+        data => this.x = JSON.parse(JSON.stringify(data))
+      )
+    )
   }
 
 }

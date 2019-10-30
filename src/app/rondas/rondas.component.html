@@ -1,3 +1,4 @@
+<h1>{{a}}</h1>
 <div class="example-header" fxLayout="row">
     <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
@@ -9,32 +10,32 @@
     <mat-table [dataSource]="dataSource" matSort>
 
         <!-- ID Column -->
-        <ng-container matColumnDef="equipo">
+        <ng-container matColumnDef="eq">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Equipo </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Equipo:"> {{row.equipo}} ({{row.e}}) </mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Equipo:"> {{row.eq}} ({{row.es}}) </mat-cell>
         </ng-container>
 
         <!-- Progress Column -->
-        <ng-container matColumnDef="r2h">
+        <ng-container matColumnDef="h">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Mejor Hito: </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Hitos:"> {{row.r2h}} ({{ uv.reglas.puntajehitos[row.r2h] }} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Hitos:">{{row.r[id-1].h}} ({{row.r[id-1].p.h}} Puntos)</mat-cell>
         </ng-container>
 
         <!-- Name Column -->
-        <ng-container matColumnDef="r2b">
+        <ng-container matColumnDef="b">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Bonus </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Bonus:"> {{row.r2b}} ({{ uv.reglas.puntajebonus * row.r2b }} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Bonus:">{{row.r[id-1].b}} ({{row.r[id-1].p.b}} Puntos)</mat-cell>
         </ng-container>
 
         <!-- Color Column -->
-        <ng-container matColumnDef="r2r">
+        <ng-container matColumnDef="r">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Reinicios </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.r2r}} ({{ uv.reglas.puntajereinicio * row.r2r }} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Reinicios:">{{row.r[id-1].r}} ({{row.r[id-1].p.r}} Puntos)</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="r2f">
+        <ng-container matColumnDef="f">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Puntaje de la ronda </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Puntaje de la ronda:"> {{row.r2f}} Puntos </mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Puntaje de la ronda:">{{row.r[id-1].p.t}} Puntos</mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

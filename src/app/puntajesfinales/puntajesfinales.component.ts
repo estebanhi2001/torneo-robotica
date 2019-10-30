@@ -17,25 +17,7 @@ export class PuntajesFinalesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.uv.titulo = "Torneo Robótica - Ronda 2"
-    this.subscriptions.add(this.uv.comp.subscribe(data => {
-      data.forEach(function (e) {
-        e.r1 = this.uv.reglas.puntajehitos[e.r1h] + (this.uv.reglas.puntajebonus * e.r1b) + (this.uv.reglas.puntajereinicio * e.r1r);
-        e.r2 = this.uv.reglas.puntajehitos[e.r2h] + (this.uv.reglas.puntajebonus * e.r2b) + (this.uv.reglas.puntajereinicio * e.r2r);
-        e.df = 5;
-        e.d.forEach(function (i, idx, array) {
-          e.df = e.df + ((i * this.uv.reglas.puntajedesafios[idx]) / 100);
-        }, this);
-        if (e.dr == true) {
-          e.pf = "Nose We"
-        } else {
-          e.pf = e.r1 + e.r2;
-        }
-      }, this);
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-    }));
+    
 
   }
   ngOnDestroy() {
