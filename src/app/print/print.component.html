@@ -1,1 +1,13 @@
-<p>print works!</p>
+<div class="container">
+    <section class="timer-counter-label">
+        <div *ngIf="counter; else elseBlock"> {{counter}} </div>
+        <ng-template #elseBlock> Press Start </ng-template>
+        <h1>{{hora | timer | async}}</h1>
+    </section>
+    <section class="timer-button-container">
+        <button class="timer-button" (click)="startTimer()">
+  {{ startText }}
+</button>
+        <button class="timer-button" (click)="clearTimer()">Clear</button>
+    </section>
+</div>

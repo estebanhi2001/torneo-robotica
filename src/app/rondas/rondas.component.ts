@@ -28,9 +28,11 @@ export class RondasComponent implements OnInit {
         this.dataSource.sortingDataAccessor = (item, property) => {
           switch (property) {
             case 'eq': return item.eq;
-            case 'h': return item.r[this.id-1].h
-            case 'b': return item.r[this.id-1].b
-            case 'r': return item.r[this.id-1].r
+            case 'h': return item.r[this.id - 1].h
+            case 'b': return item.r[this.id - 1].b
+            case 'r': return item.r[this.id - 1].p.r
+            case 'f': return item.r[this.id - 1].p.t
+            case 't': return item.r[this.id - 1].time.t
             default: return item[property];
           }
         };
@@ -42,7 +44,7 @@ export class RondasComponent implements OnInit {
     this.subscriptions.unsubscribe();
   }
 
-  displayedColumns = ['eq', 'h', 'b', 'r', 'f', 'v'];
+  displayedColumns = ['eq', 'h', 'b', 'r', 't', 'f', 'v'];
   dataSource: MatTableDataSource<Comp>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

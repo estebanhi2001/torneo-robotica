@@ -18,19 +18,27 @@
         <!-- Progress Column -->
         <ng-container matColumnDef="h">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Mejor Hito: </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Mejor Hito: ">{{row.r[id-1].h}} ({{row.r[id-1].p.h}} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Mejor Hito: ">{{row.r[id-1].h}} ({{row.r[id-1].p.h}} Puntos)
+            </mat-cell>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="b">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Bonus </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Bonus: ">{{row.r[id-1].b}} ({{row.r[id-1].p.b}} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Bonus: ">{{row.r[id-1].b}} ({{row.r[id-1].p.b}} Puntos)
+            </mat-cell>
         </ng-container>
 
         <!-- Color Column -->
         <ng-container matColumnDef="r">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Reinicios </mat-header-cell>
-            <mat-cell *matCellDef="let row" data-label="Reinicios: ">{{row.r[id-1].r}} ({{row.r[id-1].p.r}} Puntos)</mat-cell>
+            <mat-cell *matCellDef="let row" data-label="Reinicios: ">{{row.r[id-1].r}} ({{row.r[id-1].p.r}} Puntos)
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="t">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Tiempo: </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Tiempo: ">{{row.r[id-1].time | timer | async | date:'mm:ss'}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="f">
@@ -40,7 +48,8 @@
 
         <ng-container matColumnDef="v">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let row"><button mat-flat-button routerLink="/equipo/{{row.eq}}" color="primary">Ver más</button></mat-cell>
+            <mat-cell *matCellDef="let row"><button mat-flat-button routerLink="/equipo/{{row.eq}}" color="primary">Ver
+                    más</button></mat-cell>
         </ng-container>
 
 

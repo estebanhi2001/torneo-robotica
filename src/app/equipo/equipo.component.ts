@@ -25,6 +25,15 @@ export class EquipoComponent implements OnInit {
         this.eq = data2.find(x => x.eq === this.id);
       })
     }));
+
   }
 
+  update(eq) {
+    var updates = this.uv.cleanComp(eq);
+    this.uv.db.doc(`competencia/${eq.eq}`).set(updates)
+  }
+
+  now() {
+    return Date.now();
+  }
 }

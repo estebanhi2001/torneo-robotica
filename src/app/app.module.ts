@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { PrintComponent } from './print/print.component';
 import { RondasComponent } from './rondas/rondas.component';
 import { EquipoComponent } from './equipo/equipo.component';
+import { TimerPipe } from './timer.pipe';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EquipoComponent } from './equipo/equipo.component';
     PrintComponent,
     RondasComponent,
     EquipoComponent,
+    TimerPipe,
   ],
   imports: [
     BrowserModule,
