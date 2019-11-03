@@ -48,13 +48,12 @@
 
         <ng-container matColumnDef="v">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let row"><button mat-flat-button routerLink="/equipo/{{row.eq}}" color="primary">Ver
-                    más</button></mat-cell>
+            <mat-cell *matCellDef="let row"><button mat-button routerLink="/equipo/{{row.eq}}">Ver más</button></mat-cell>
         </ng-container>
 
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row [ngClass]="{'ausente': row.a == 0, 'listo': row.a >= 3 }" *matRowDef="let row; columns: displayedColumns;">
+        <mat-row [ngClass]="{'ausente': row.a == 0, 'listo': row.a >= id*2 }" *matRowDef="let row; columns: displayedColumns;">
         </mat-row>
     </mat-table>
 

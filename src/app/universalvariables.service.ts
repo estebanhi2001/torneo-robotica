@@ -34,18 +34,22 @@ export class UniversalvariablesService {
                     if (b.mrh < c.p.t) {
                       b.mrh = c.p.t
                     }
-                    if ((c.h == (reglas.data().puntajehitos.length - 1)) && (c.time.i && c.time.f)) {
-
-                      if (((c.time.f - c.time.i) / 1000) > 420) {
-                        c.time.t = 420
-                      } else {
-                        c.time.t = (c.time.f - c.time.i) / 1000;
-                      }
-
+                    if(c.time.c){
+                      c.time.t = c.time.c
                     } else {
-                      c.time.t = 420
+                      if ((c.h == (reglas.data().puntajehitos.length - 1)) && (c.time.i && c.time.f)) {
+
+                        if (((c.time.f - c.time.i) / 1000) > 420) {
+                          c.time.t = 420
+                        } else {
+                          c.time.t = (c.time.f - c.time.i) / 1000;
+                        }
+  
+                      } else {
+                        c.time.t = 420
+                      }
                     }
-                    c.p.t = c.p.t + ((420 - c.time.t) / 2)
+                    c.p.t = Number((c.p.t + ((420 - c.time.t) / 2)).toFixed(0)); 
                     b.t = b.t + c.p.t;
                     if (c.h == (reglas.data().puntajehitos.length - 1)) {
                       c.hm = false;
@@ -67,7 +71,7 @@ export class UniversalvariablesService {
                   if (b.dt < b.ren && b.dr) {
                     b.ppe = b.dt / b.ren
                   }
-                  b.t = b.t * b.ppe
+                  b.t = Number((b.t * b.ppe).toFixed(1));
                 }, this);
                 return a;
               }
@@ -96,15 +100,27 @@ export class UniversalvariablesService {
   cleanTime(time: Timer) {
     delete time.i
     delete time.f
+    delete time.c
   }
+
+  update(eq) {
+    var updates = this.cleanComp(eq);
+    this.db.doc(`competencia/${eq.eq}`).set(updates)
+  }
+
+  now() {
+    return Date.now();
+  }
+
 
 }
 
 export interface Comp {
   eq: string;
+  a: number;
   es: string;
   ds: string;
-  d: [number];
+  d: number[];
   dt: number;
   r: Ronda[];
   t: number,
@@ -132,4 +148,5 @@ export interface Timer {
   i: number,
   f: number,
   t: number,
+  c: number
 }

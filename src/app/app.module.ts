@@ -19,6 +19,7 @@ import { PrintComponent } from './print/print.component';
 import { RondasComponent } from './rondas/rondas.component';
 import { EquipoComponent } from './equipo/equipo.component';
 import { TimerPipe } from './timer.pipe';
+import { EquipodetalleComponent } from './equipodetalle/equipodetalle.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TimerPipe } from './timer.pipe';
     RondasComponent,
     EquipoComponent,
     TimerPipe,
+    EquipodetalleComponent,
   ],
   imports: [
     BrowserModule,

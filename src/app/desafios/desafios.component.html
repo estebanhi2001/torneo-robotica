@@ -29,6 +29,12 @@
             <mat-cell *matCellDef="let row" data-label="Reinicios:"> {{row.dt}}%</mat-cell>
         </ng-container>
 
+        <ng-container matColumnDef="v">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row"><button mat-button routerLink="/equipo/{{row.eq}}">Ver más</button></mat-cell>
+        </ng-container>
+
+
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row [ngClass]="{'ausente': row.a == 0, 'listo': row.dr == true }" *matRowDef="let row; columns: displayedColumns;">
         </mat-row>

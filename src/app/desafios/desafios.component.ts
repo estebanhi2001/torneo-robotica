@@ -36,7 +36,7 @@ export class DesafiosComponent implements OnInit {
     this.subscriptions.unsubscribe();
   }
 
-  displayedColumns = ['eq', 'ds', 'dt'];
+  displayedColumns = ['eq', 'ds', 'dt', 'v'];
   dataSource: MatTableDataSource<Comp>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

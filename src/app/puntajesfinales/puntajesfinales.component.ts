@@ -35,7 +35,7 @@ export class PuntajesFinalesComponent implements OnInit {
     this.subscriptions.unsubscribe();
   }
 
-  displayedColumns = ['eq', 'r1', 'dt', 'r2', 'pt'];
+  displayedColumns = ['eq', 'r1', 'dt', 'r2', 'pt', 'v'];
   dataSource: MatTableDataSource<Comp>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;

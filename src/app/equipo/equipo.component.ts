@@ -28,12 +28,9 @@ export class EquipoComponent implements OnInit {
 
   }
 
-  update(eq) {
-    var updates = this.uv.cleanComp(eq);
-    this.uv.db.doc(`competencia/${eq.eq}`).set(updates)
-  }
 
   now() {
     return Date.now();
   }
+
 }
